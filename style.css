@@ -1,0 +1,117 @@
+body {
+    background: linear-gradient(135deg, #ff6b6b, #f8e473, #6bffb8, #6b83ff, #e76bff);
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite;
+    overflow: hidden;
+    color: #ffffff;
+    font-family: fantasy
+    height: 100vh;
+    margin: 0;
+    position: relative;
+  }
+  
+  @keyframes gradientShift {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+  
+  .container {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .rainbow-text {
+    font-size: 3em;
+    background: linear-gradient(45deg, #ff0000, #ffa500, #ffff00, #00ff00, #0000ff, #4b0082, #ee82ee);
+    background-size: 400%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: rainbowMove 5s linear infinite;
+    text-shadow: 2px 2px 8px #000;
+  }
+  
+  @keyframes rainbowMove {
+    0% {background-position: 0%;}
+    100% {background-position: 400%;}
+  }
+  
+  img {
+    width: 300px;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
+  }
+  
+  button {
+    margin-top: 30px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #ffffff;
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  }
+  
+  button:hover {
+    background-color: #333;
+    color: #ffffff;
+    transform: scale(1.1);
+  }
+  
+  /* Blobs */
+  .blob, .blob2 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    top: 20%;
+    left: 10%;
+    animation: blobMove 20s infinite ease-in-out alternate;
+    z-index: 1;
+  }
+  
+  .blob2 {
+    width: 200px;
+    height: 200px;
+    top: 60%;
+    left: 70%;
+    animation: blobMove2 25s infinite ease-in-out alternate;
+  }
+  
+  @keyframes blobMove {
+    0% {transform: translate(0, 0) scale(1);}
+    100% {transform: translate(100px, 50px) scale(1.2);}
+  }
+  
+  @keyframes blobMove2 {
+    0% {transform: translate(0, 0) scale(1);}
+    100% {transform: translate(-80px, -60px) scale(1.5);}
+  }
+  
+  .explosion {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: explode 1s ease-out forwards;
+    z-index: 3;
+  }
+  
+  @keyframes explode {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(8);
+      opacity: 0;
+    }
+  }
+  
